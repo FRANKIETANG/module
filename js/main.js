@@ -1,29 +1,12 @@
-class Person {
-    constructor(name) {
-        this.name = name
-    }
-    sayHi() {
-        console.log(`hello I'm ${this.name}`)
-    }
-}
+(function (global) {
 
-class Employee extends Person {
-    constructor(name, salary) {
-        super(name)
-        this.salary = salary
-    }
-    work() {
-        console.log(`I'm working, My salary is ${formatSalary(this.salary)}`)
-    }
-}
+    let Employee = global.MYAPP.Employee  // 引入 Employee
+    let frankie = new Employee('frankie', 5000)
+    frankie.sayHi() // hello I'm frankie
+    frankie.work() // I'm working, My salary is 5000 RMB
 
-function formatSalary(salary) {
-    return salary + ' RMB'
-}
+})(window)
 
-let frankie = new Employee('frankie', 5000)
-frankie.sayHi() // hello I'm frankie
-frankie.work() // I'm working, My salary is 5000 RMB
 
 
 
