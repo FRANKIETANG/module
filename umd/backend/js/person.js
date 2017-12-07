@@ -14,5 +14,7 @@
         })
     } else if (module != null && typeof module.exports === 'object') {
         module.exports = Person
+    } else {
+        gl.Person = Person
     }
 })(this)
